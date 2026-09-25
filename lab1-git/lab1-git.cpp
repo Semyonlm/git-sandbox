@@ -38,6 +38,10 @@ int main() {
         case 1:
             cout << "Введите скорость v (м/с) и радиус r (м): ";
             cin >> v >> r;
+            if (v < 0 || r <= 0) {
+                cout << "Ошибка: v ≥ 0, r > 0\n";
+                break;
+            }
             cout << "Ускорение = " << centripetalAccel(v, r) << " м/с²\n";
             break;
         case 2:
