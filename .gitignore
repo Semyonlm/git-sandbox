@@ -1,0 +1,51 @@
+# === Служебные файлы Visual Studio ===
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# === Результаты сборки ===
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.obj
+*.o
+*.out
+
+# === Файлы отладки ===
+*.log
+*.tlog
+*.idb
+*.pch
+*.ipch
+*.iobj
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tlh
+*.tmp
+*.tmp_proj
+
+# === CMake (если используется) ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# === Прочее ===
+Thumbs.db
+desktop.ini
