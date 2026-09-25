@@ -22,6 +22,11 @@ double centripetalForce(double m, double v, double r) {
     return m * (v * v) / r;
 }
 
+double revolutionPeriod(double v, double r) {
+    if (v == 0) return numeric_limits<double>::quiet_NaN();
+    return 2 * 3.14159265358979 * r / v;
+}
+
 int main() {
     setlocale(LC_ALL, "Rus");
     system("chcp 1251 > nul");
@@ -31,6 +36,7 @@ int main() {
         cout << "\n== Вариант 39: Движение по окружности ==\n";
         cout << "1. Центростремительное ускорение\n";
         cout << "2. Центростремительная сила\n";
+        cout << "3. Период обращения\n";
         cout << "0. Выход\n";
         cout << "Выберите пункт: ";
         cin >> choice;
@@ -52,6 +58,15 @@ int main() {
                 break;
             }
             cout << "Сила = " << centripetalForce(m, v, r) << " Н\n";
+            break;
+        case 3:
+            cout << "Введите v и r: ";
+            cin >> v >> r;
+            if (v <= 0 || r <= 0) {
+                cout << "Ошибка: v > 0, r > 0\n";
+                break;
+            }
+            cout << "Период = " << revolutionPeriod(v, r) << " с\n";
             break;
         case 0:
             cout << "Работа завершена.\n";
