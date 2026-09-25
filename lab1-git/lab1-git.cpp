@@ -47,6 +47,10 @@ int main() {
         case 2:
             cout << "Введите массу m (кг), скорость v (м/с), радиус r (м): ";
             cin >> m >> v >> r;
+            if (m <= 0 || v < 0 || r <= 0) {
+                cout << "Ошибка: m > 0, v ≥ 0, r > 0\n";
+                break;
+            }
             cout << "Сила = " << centripetalForce(m, v, r) << " Н\n";
             break;
         case 0:
