@@ -27,6 +27,11 @@ double revolutionPeriod(double v, double r) {
     return 2 * 3.14159265358979 * r / v;
 }
 
+double circumference(double r) {
+    if (r <= 0) return std::numeric_limits<double>::quiet_NaN();
+    return 2 * 3.14159265358979 * r;
+}
+
 int main() {
     setlocale(LC_ALL, "Rus");
     system("chcp 1251 > nul");
@@ -37,6 +42,7 @@ int main() {
         cout << "1. Центростремительное ускорение\n";
         cout << "2. Центростремительная сила\n";
         cout << "3. Период обращения\n";
+        cout << "4. Длина окружности\n";
         cout << "0. Выход\n";
         cout << "Выберите пункт: ";
         cin >> choice;
@@ -54,7 +60,7 @@ int main() {
             cout << "Введите массу m (кг), скорость v (м/с), радиус r (м): ";
             cin >> m >> v >> r;
             if (m <= 0 || v < 0 || r <= 0) {
-                cout << "Ошибка: m > 0, v ≥ 0, r > 0\n";
+                cout << "Ошибка: m > 0, v ≥ 0, r > 0\n"; 
                 break;
             }
             cout << "Сила = " << centripetalForce(m, v, r) << " Н\n";
@@ -68,12 +74,22 @@ int main() {
             }
             cout << "Период = " << revolutionPeriod(v, r) << " с\n";
             break;
+        case 4:
+            cout << "Введите r: ";
+            cin >> r;
+            if (r <= 0) {
+                cout << "Ошибка: r > 0\n";
+                break;
+            }
+            cout << "Длина = " << circumference(r) << " м\n";
+            break;
         case 0:
             cout << "Работа завершена.\n";
             break;
         default:
             cout << "Такого пункта нет.\n";
         }
+
     } while (choice != 0);
     return 0;
 }
