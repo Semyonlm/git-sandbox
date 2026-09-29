@@ -1,11 +1,10 @@
-# === Служебные файлы Visual Studio ===
+
 .vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# === Результаты сборки ===
 [Bb]in/
 [Oo]bj/
 [Dd]ebug/
@@ -24,7 +23,6 @@ build/
 *.o
 *.out
 
-# === Файлы отладки ===
 *.log
 *.tlog
 *.idb
@@ -41,11 +39,9 @@ build/
 *.tmp
 *.tmp_proj
 
-# === CMake (если используется) ===
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 
-# === Прочее ===
 Thumbs.db
 desktop.ini
